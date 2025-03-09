@@ -4,7 +4,7 @@
 /* Do not modify the function signatures here */
 
 /**
- * @brief Return the possible combinations to add up to `points`
+ * @brief Return the number of possible combinations to add up to `points`
  * 
  * @param points
  * @return int 
