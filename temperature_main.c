@@ -1,4 +1,4 @@
-#include "report.h"
+#include "temperature.h"
 
 int main(int argc, char *argv[]) {
     return 0;
