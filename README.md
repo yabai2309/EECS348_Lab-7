@@ -39,13 +39,14 @@ lab.
 
 You should keep code that handles user input for each part of the lab in each 
 part's respective `main` file, and code that implements functionality in
-`football.c` or `report.c`.
+`football.c` or `temperature.c`.
 
-#### Report
+#### Temperature
 
-Write any functions you need in `report.c` and call them from your main
-function in `report_main.c`. Make sure to put the function signatures for the
-functions you define in `report.h` so that `report_main.c` can access them.
+Write any functions you need in `temperature.c` and call them from your main
+function in `temperature_main.c`. The function signatures for converting
+temperatures are already in `temperature.h` but you will need to add a
+signature for your characterize function.
 
 #### Football scores
 
