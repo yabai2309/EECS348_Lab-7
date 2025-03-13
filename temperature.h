@@ -1,7 +1,7 @@
 #ifndef __REPORT_H__
 #define __REPORT_H__
 
-/* Do not modify existing function signatures here */
+/* Add any function signatures you need here but do not modify the existing ones */
 
 /**
  * @brief Convert temperature in Celsius to Fahrenheit
