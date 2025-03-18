@@ -35,4 +35,19 @@ float celsius_to_kelvin(float celsius);
  */
 float kelvin_to_celsius(float celsius);
 
+/**
+ * @brief Categorize temperature and print out the corresponding advisory info
+ * 
+ * @param celsius
+ * @return none
+ */
+void categorizeTemp(float C);
+
+/**
+ * @brief Clear the input buffer to handle mistyped user input
+ * 
+ * @param none
+ * @return none
+ */
+void clearInputBuffer();
 #endif /* __REPORT_H__ */
