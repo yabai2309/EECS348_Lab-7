@@ -1,45 +1,43 @@
 #include "football.h"
+#include <stdio.h>
 
-// Array of available scoring plays.
-static int scores[5] = {2, 3, 6, 7, 8};
 
-// Recursive helper to count combinations.
+static int scores[5] = {2, 3, 6, 7, 8};// Array of available scoring plays
+
+// Recursive helper function to count the number of combinations
 static int countCombinationsHelper(int target, int index) {
-    if (target == 0)
+    if (target == 0) //If the number is 0, stop and return the value 1
         return 1;
-    if (target < 0)
+    if (target < 0)// If the number is smaller than 0, stop and return the value 0
         return 0;
-    int count = 0;
-    // Only consider scoring plays from the current index onward to avoid duplicate combinations.
-    for (int i = index; i < 5; i++) {
-        count += countCombinationsHelper(target - scores[i], i);
+    int count = 0;//Start declare the count variable to return it back to user
+    for (int i = index; i < 5; i++) {// Loop through the available scoring plays to see the number of combination
+        count += countCombinationsHelper(target - scores[i], i);//Recursive function to count
     }
-    return count;
+    return count;//Return the value back to the user
 }
 
-int count_combinations(int points) {
+int count_combinations(int points) {//Main count function that using both user input and start the loop from 0
     return countCombinationsHelper(points, 0);
 }
 
-// Recursive helper to print combinations.
-// 'combination' array holds how many times each scoring play is used.
+// Recursive helper to print combinations
 static void printCombinationsHelper(int target, int combination[5], int index) {
-    if (target == 0) {
+    if (target == 0) {// Target = 0 means we've already found the combination that works
         // Format: Safety, FG, TD, TD+2, TD+FG.
-        printf("Safety: %d, FG: %d, TD: %d, TD+2: %d, TD+FG: %d\n",
-               combination[0], combination[1], combination[2], combination[3], combination[4]);
-        return;
+        printf("Safety: %d, FG: %d, TD: %d, TD+2: %d, TD+FG: %d\n", combination[0], combination[1], combination[2], combination[3], combination[4]); // Print out that combination
+        return;//End the function
     }
-    if (target < 0)
-        return;
-    for (int i = index; i < 5; i++) {
-        combination[i] += 1;
-        printCombinationsHelper(target - scores[i], combination, i);
-        combination[i] -= 1;
+    if (target < 0)//If target < 0, means that's a wrong combination, so discard it
+        return;//End function without printing anything
+    for (int i = index; i < 5; i++) {//Loop through each plays in the plays array
+        combination[i] += 1;//Add that number to the combination array to mark it
+        printCombinationsHelper(target - scores[i], combination, i);//Pass the new value after subtracting the plays value from target score, and do recursion
+        combination[i] -= 1;//After the function return, just pop away the combination that we've just added
     }
 }
 
-void print_combinations(int points) {
-    int combination[5] = {0, 0, 0, 0, 0};
-    printCombinationsHelper(points, combination, 0);
+void print_combinations(int points) {//Main print out function that take points as the input
+    int combination[5] = {0, 0, 0, 0, 0};//Declare the points combination
+    printCombinationsHelper(points, combination, 0);//Pass the blank combination in and start the recursion
 }
