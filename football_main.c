@@ -1,3 +1,16 @@
+/*
+EECS 348 Lab 07 - Exercise 1
+Football score combination program
+
+Inputs: A number from user
+Outputs: All possible combination for the score
+
+Collaborators: None
+Other sources: None
+Author's name: Anh Hoang
+Creation date: 3/18/25
+
+*/
 #include <stdio.h> // Include the necessary library
 #include <stdlib.h>
 #include "football.h"

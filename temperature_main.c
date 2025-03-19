@@ -1,3 +1,16 @@
+/*
+EECS 348 Lab 07 - Exercise 2
+Temperature converter program
+
+Inputs: A number from user for the temperature, 1 for current unit and 1 for the target unit
+Outputs: The converted temperature and weather advisory
+
+Collaborators: None
+Other sources: None
+Author's name: Anh Hoang
+Creation date: 3/18/25
+
+*/
 #include "temperature.h"//Include the necessary libraries
 #include <stdio.h>
 
